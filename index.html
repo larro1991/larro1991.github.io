@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larry Roberts | Enterprise IT Automation & Security</title>
+    <meta name="description" content="Enterprise IT consultant specializing in Active Directory, Microsoft 365, PowerShell automation, and infrastructure security. 20+ years of experience.">
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-orange: #d29922;
+            --accent-red: #f85149;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.15rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .hero .summary {
+            max-width: 640px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .hero .links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: border-color 0.2s;
+        }
+
+        .hero .links a:hover {
+            border-color: var(--accent);
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Module Cards */
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .module-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: border-color 0.2s;
+        }
+
+        .module-card:hover {
+            border-color: var(--accent);
+        }
+
+        .module-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-card h3 a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .module-card h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .module-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .module-card .meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .module-card .install {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.4rem 0.75rem;
+            font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+            font-size: 0.78rem;
+            color: var(--accent-green);
+            margin-top: 0.75rem;
+            display: inline-block;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            margin-top: 0.5rem;
+        }
+
+        .tag-row span {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.72rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            margin-bottom: 3rem;
+        }
+
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .exp-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .exp-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .exp-item .label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6rem; }
+            .hero .tagline { font-size: 1rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="hero">
+            <h1>Larry Roberts</h1>
+            <div class="tagline">Enterprise IT Automation & Security</div>
+            <p class="summary">
+                20+ years managing Windows Server, Active Directory, and Microsoft 365 environments.
+                I build PowerShell tooling that turns manual runbooks into repeatable, auditable automation.
+            </p>
+            <div class="links">
+                <a href="https://github.com/larro1991">GitHub</a>
+                <a href="https://www.powershellgallery.com/profiles/larro1991">PowerShell Gallery</a>
+                <a href="https://www.linkedin.com/in/yourlinkedin">LinkedIn</a>
+                <a href="https://www.upwork.com/freelancers/yourprofile">Upwork</a>
+            </div>
+            <div class="skills">
+                <span class="skill-tag">Active Directory</span>
+                <span class="skill-tag">Entra ID / Azure AD</span>
+                <span class="skill-tag">Microsoft 365</span>
+                <span class="skill-tag">PowerShell</span>
+                <span class="skill-tag">Exchange Online</span>
+                <span class="skill-tag">VMware ESXi</span>
+                <span class="skill-tag">Windows Server</span>
+                <span class="skill-tag">Cisco Meraki</span>
+                <span class="skill-tag">Group Policy</span>
+                <span class="skill-tag">Intune</span>
+                <span class="skill-tag">Security Auditing</span>
+                <span class="skill-tag">Infrastructure Monitoring</span>
+            </div>
+        </div>
+
+        <h2>Open-Source Modules</h2>
+        <div class="modules">
+
+            <div class="module-card">
+                <h3><a href="https://github.com/larro1991/EntraID-SecurityAudit">EntraID-SecurityAudit</a></h3>
+                <p>Entra ID (Azure AD) security auditing. Risky users, app permission sprawl, sign-in anomalies, privileged role review, and PIM status.</p>
+                <div class="tag-row">
+                    <span>Entra ID</span><span>Identity</span><span>MFA</span><span>PIM</span>
+                </div>
+                <div class="install">Install-Module EntraID-SecurityAudit</div>
+            </div>
+
+            <div class="module-card">
+                <h3><a href="https://github.com/larro1991/M365-SecurityBaseline">M365-SecurityBaseline</a></h3>
+                <p>Microsoft 365 tenant security baseline. MFA enrollment gaps, Conditional Access review, mailbox forwarding rules, guest account hygiene.</p>
+                <div class="tag-row">
+                    <span>M365</span><span>Security</span><span>MFA</span><span>Compliance</span>
+                </div>
+                <div class="install">Install-Module M365-SecurityBaseline</div>
+            </div>
+
+            <div class="module-card">
+                <h3><a href="https://github.com/larro1991/AD-SecurityAudit">AD-SecurityAudit</a></h3>
+                <p>Active Directory security and compliance auditing. Stale accounts, local admin sprawl, orphaned SIDs, privileged group review.</p>
+                <div class="tag-row">
+                    <span>AD</span><span>Security</span><span>SOC2</span><span>HIPAA</span>
+                </div>
+                <div class="install">Install-Module AD-SecurityAudit</div>
+            </div>
+
+            <div class="module-card">
+                <h3><a href="https://github.com/larro1991/AD-UserLifecycle">AD-UserLifecycle</a></h3>
+                <p>AD user lifecycle automation. Template-based provisioning, offboarding with data archival, and flexible reporting.</p>
+                <div class="tag-row">
+                    <span>AD</span><span>Provisioning</span><span>Offboarding</span><span>Automation</span>
+                </div>
+                <div class="install">Install-Module AD-UserLifecycle</div>
+            </div>
+
+            <div class="module-card">
+                <h3><a href="https://github.com/larro1991/Infra-HealthDashboard">Infra-HealthDashboard</a></h3>
+                <p>Windows server infrastructure health dashboard. Disk space, service status, uptime, and pending updates via CIM across your fleet.</p>
+                <div class="tag-row">
+                    <span>Infrastructure</span><span>Monitoring</span><span>CIM</span><span>Health</span>
+                </div>
+                <div class="install">Install-Module Infra-HealthDashboard</div>
+            </div>
+
+            <div class="module-card">
+                <h3><a href="https://github.com/larro1991/Exchange-MigrationAssessment">Exchange-MigrationAssessment</a></h3>
+                <p>Exchange to Microsoft 365 migration pre-assessment. Mailbox inventory, distribution groups, mail flow rules, public folder analysis.</p>
+                <div class="tag-row">
+                    <span>Exchange</span><span>Migration</span><span>M365</span><span>Assessment</span>
+                </div>
+                <div class="install">Install-Module Exchange-MigrationAssessment</div>
+            </div>
+
+        </div>
+
+        <div class="experience">
+            <h2>By the Numbers</h2>
+            <div class="exp-grid">
+                <div class="exp-item">
+                    <div class="number">20+</div>
+                    <div class="label">Years in Enterprise IT</div>
+                </div>
+                <div class="exp-item">
+                    <div class="number">6</div>
+                    <div class="label">Published PS Modules</div>
+                </div>
+                <div class="exp-item">
+                    <div class="number">5.1+</div>
+                    <div class="label">PowerShell (& PS7)</div>
+                </div>
+                <div class="exp-item">
+                    <div class="number">0</div>
+                    <div class="label">Get-WmiObject in My Code</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Larry Roberts &middot;
+            <a href="https://github.com/larro1991">github.com/larro1991</a> &middot;
+            <a href="https://www.powershellgallery.com/profiles/larro1991">PowerShell Gallery</a>
+        </div>
+
+    </div>
+</body>
+</html>
